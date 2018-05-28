@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Review controller.
+ * review controller.
  *
  * @Route("review")
  */
@@ -24,7 +24,7 @@ class ReviewController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $reviews = $em->getRepository('AppBundle:Review')->findAll();
+        $reviews = $em->getRepository('AppBundle:review')->findAll();
         return $this->render('review/index.html.twig', array(
             'reviews' => $reviews,
         ));
