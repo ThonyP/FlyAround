@@ -16,7 +16,13 @@ use AppBundle\Entity\Reservation;
  *
  * @Route("listing")
  */
+<<<<<<< HEAD
 class ListingController extends Controller
+=======
+
+class ListingController extends Controller
+
+>>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
 {
     /**
      * List one reservation with one flight and one planemodel, with few IDs.
@@ -28,6 +34,7 @@ class ListingController extends Controller
      * @ParamConverter("planemodel", options={"mapping": {"planemodel_id": "id"}})
      */
 
+<<<<<<< HEAD
     public function indexAction(Reservation $reservation, Flight $flight, PlaneModel $planeModel)
     {
         return $this->render('listing/index.html.twig', array(
@@ -38,3 +45,15 @@ class ListingController extends Controller
     }
 
 }
+=======
+    public function indexAction(Reservation $reservation, Flight $flight, PlaneModel $planemodel)
+    {
+        return $this->render('listing/review', array(
+            'reservation' => $reservation,
+            'flight' => $flight,
+            'planemodel' => $planemodel
+        ));
+    }
+
+}
+>>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f

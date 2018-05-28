@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
+<<<<<<< HEAD
  * User: wilder20
  * Date: 28/05/18
  * Time: 16:17
@@ -18,6 +19,16 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\ORM\EntityRepository;
 
+=======
+ * User: takne
+ * Date: 14/05/18
+ * Time: 16:06
+ */
+namespace AppBundle\Form;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+>>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
 class ReviewType extends AbstractType
 {
     /**
@@ -28,6 +39,7 @@ class ReviewType extends AbstractType
         $builder
             ->add('userRated')
             ->add('reviewAuthor')
+<<<<<<< HEAD
             ->add('text', TextareaType::class, array('attr'=> array('maxlenght'=>250, 'label'=> 'Description')))
             ->add('publicationDate', DateType::class, array('data'=> new \DateTime('now')))
             ->add('note', IntegerType::class, array('attr'=> array('min' => 0, 'max' => 10, 'label' => 'Note')));
@@ -35,6 +47,14 @@ class ReviewType extends AbstractType
     /**
     * {@inheritdoc}
     */
+=======
+            ->add('text')
+            ->add('publicationDate')
+            ->add('note');
+    }/**
+ * {@inheritdoc}
+ */
+>>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
