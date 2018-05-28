@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
 
 namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -7,63 +7,28 @@ use AppBundle\Entity\Review;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-=======
-/**
- * Created by PhpStorm.
- * User: wilder20
- * Date: 14/05/18
- * Time: 14:14
- */
 
-namespace AppBundle\Controller;
-
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use AppBundle\Entity\Review;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-
->>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
 /**
  * Review controller.
  *
  * @Route("review")
  */
-<<<<<<< HEAD
 class ReviewController extends Controller
 {
     /**
-=======
-
-class ReviewController extends Controller
-{
-     /**
->>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
      * Lists all review entities.
      *
      * @Route("/", name="review_index")
      * @Method("GET")
      */
-<<<<<<< HEAD
-=======
-
->>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
         $reviews = $em->getRepository('AppBundle:Review')->findAll();
-<<<<<<< HEAD
-=======
-
->>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
         return $this->render('review/index.html.twig', array(
             'reviews' => $reviews,
         ));
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
     /**
      * Creates a new review entity.
      *
@@ -75,29 +40,17 @@ class ReviewController extends Controller
         $review = new Review();
         $form = $this->createForm('AppBundle\Form\ReviewType', $review);
         $form->handleRequest($request);
-<<<<<<< HEAD
-=======
-
->>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($review);
             $em->flush();
-<<<<<<< HEAD
             return $this->redirectToRoute('review_show', array('id' => $review->getId()));
         }
-=======
-
-            return $this->redirectToRoute('review_index', array('id' => $review->getId()));
-        }
-
->>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
         return $this->render('review/new.html.twig', array(
             'review' => $review,
             'form' => $form->createView(),
         ));
     }
-<<<<<<< HEAD
     /**
      * Finds and displays a review entity.
      *
@@ -165,7 +118,3 @@ class ReviewController extends Controller
             ->getForm();
     }
 }
-=======
-
-}
->>>>>>> 996c611a09205c2a960c08c0fe9a0b0de2a8465f
